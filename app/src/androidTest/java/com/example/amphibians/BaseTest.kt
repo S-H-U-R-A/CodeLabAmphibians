@@ -31,6 +31,7 @@ open class BaseTest {
 
     companion object {
         fun lookFor(matcher: Matcher<View>): ViewAction {
+
             return object : ViewAction {
                 override fun getConstraints(): Matcher<View> {
                     return isRoot()

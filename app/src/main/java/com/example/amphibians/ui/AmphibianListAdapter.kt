@@ -18,7 +18,7 @@ class AmphibianListAdapter(val clickListener: AmphibianListener) :
 
     class AmphibianViewHolder(
         var binding: ListViewItemBinding
-        ) : RecyclerView.ViewHolder(binding.root){
+    ) : RecyclerView.ViewHolder(binding.root){
 
         fun bind(clickListener: AmphibianListener, amphibian: Amphibian) {
             binding.amphibian = amphibian
@@ -42,9 +42,8 @@ class AmphibianListAdapter(val clickListener: AmphibianListener) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AmphibianViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        return AmphibianViewHolder(
-            ListViewItemBinding.inflate(layoutInflater, parent, false)
-        )
+        val view = ListViewItemBinding.inflate(layoutInflater, parent, false)
+        return AmphibianViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: AmphibianViewHolder, position: Int) {
